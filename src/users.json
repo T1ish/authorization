@@ -1,0 +1,6 @@
+[
+    {"name":"Hans","roles":["student"],"rights":["can_view_homework"]},
+    {"name":"Jens","roles":["student", "teacher", "admin"],"rights":["can_view_homework", "can_view_students", "can_view_teachers"]},
+    {"name":"Jimmy","roles":["student", "teacher"],"rights":["can_view_homework", "can_view_students"]}
+]
+
