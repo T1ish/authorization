@@ -1,0 +1,29 @@
+.week-schedule{
+    display: inline-block;
+    width: 50%;
+    margin: 4px 2px;
+    margin-right: 10px;
+}
+
+.student-list {
+    display: inline-block;
+    width: 40%;
+    right: 10px;
+    border: 2px solid green;
+    margin: 4px 2px;
+    margin-left: 10px;
+    position: static;
+}
+
+.button {
+  background-color: royalblue;
+  border: none;
+  color: white;
+  padding: 7px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+}

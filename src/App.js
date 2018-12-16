@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, Redirect, withRouter} from 'react-router-dom';
-import userList from "./users.json";
-import Protected from "./Projected";
+import userList from './users.json';
+import Protected from './Projected';
+import Public from './Public';
 
 const user = userList[0] 
 const admin = userList[1] 
@@ -21,8 +22,6 @@ const fakeAuth = {
     setTimeout(cb, 100)
   }
 }
-
-const Public = () => <h3>Public</h3>
 
 class Login extends React.Component {
   state = {
@@ -50,9 +49,9 @@ class Login extends React.Component {
     return (
       <div>
         <p>You must log in to view this page at { from.pathname }</p>
-        <button onClick={this.login.bind(this, user)}>Login as student </button> -|- 
-        <button onClick={this.login.bind(this, mod)}>Login as teacher </button> -|- 
-        <button onClick={this.login.bind(this, admin)}>Login as admin </button>
+        <button className="button" onClick={this.login.bind(this, user)}>Login as student </button> -|- 
+        <button className="button" onClick={this.login.bind(this, mod)}>Login as teacher </button> -|- 
+        <button className="button" onClick={this.login.bind(this, admin)}>Login as admin </button>
       </div>
     );
   }
@@ -75,7 +74,7 @@ const AuthButton = withRouter(( {history} ) => (
   fakeAuth.isAuthenticated === true
   ? 
   <p>
-    Welcome! <button onClick={() => {
+    Welcome! <button className="button" onClick={() => {
       fakeAuth.signout(() =>  {
         history.push('/')
       })
@@ -99,7 +98,6 @@ class App extends React.Component {
             <li><Link to='/public'>Public Page</Link></li>
             <li><Link to='/protected'>Protected Page</Link></li>
           </ul>
-        Hello world
         <Route path='/public' component={Public} />
         <Route path='/login' component={Login}/>
         <PrivateRoute path='/protected' component={Protected} data={store} />
